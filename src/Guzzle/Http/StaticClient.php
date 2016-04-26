@@ -23,7 +23,7 @@ final class StaticClient
      */
     public static function mount($className = 'Guzzle', ClientInterface $client = null)
     {
-        class_alias(__CLASS__, $className);
+        class_alias(__CLASS__, 'Guzzle'); // Hardcode the class alias for HHVM
         if ($client) {
             self::$client = $client;
         }
